@@ -1,0 +1,107 @@
+.setLine(@c: #eee) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 200%;
+  border: 1rpx solid @c;
+  color: @c;
+  height: 200%;
+  transform-origin: left top;
+  transform: scale(0.5);
+}
+
+.vh-1px, .vh-1px-t, .vh-1px-b, .vh-1px-tb, .vh-1px-l, .vh-1px-r {
+  position: relative;
+}
+
+.vh-1px {
+  &:before {
+    .setLine();
+  }
+}
+
+.vh-1px-t {
+  &:before {
+    .setTopLine();
+  }
+}
+
+.vh-1px-b {
+  &:after {
+    .setBottomLine();
+  }
+}
+
+.vh-1px-tb {
+  &:before {
+    .setTopLine();
+  }
+  &:after {
+    .setBottomLine();
+  }
+}
+
+.vh-1px-l {
+  &:before {
+    .setLeftLine();
+  }
+}
+
+.vh-1px-r {
+  &:after {
+    .setRightLine();
+  }
+}
+
+.setTopLine(@c: #eee) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1rpx;
+  border-top: 1rpx solid @c;
+  color: @c;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+.setBottomLine(@c: #eee) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1rpx;
+  border-bottom: 1rpx solid @c;
+  color: @c;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+}
+
+.setLeftLine(@c: #eee) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1rpx;
+  bottom: 0;
+  border-left: 1rpx solid @c;
+  color: @c;
+  transform-origin: 0 0;
+  transform: scaleX(0.5);
+}
+
+.setRightLine(@c: #eee) {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1rpx;
+  bottom: 0;
+  border-right: 1rpx solid @c;
+  color: @c;
+  transform-origin: 100% 0;
+  transform: scaleX(0.5);
+}

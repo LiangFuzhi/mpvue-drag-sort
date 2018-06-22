@@ -1,0 +1,10 @@
+{
+  "name": "mpvue-drag-sort",
+  "version": "1.0.1",
+  "description": "A Mpvue project",
+  "author": "LFZ",
+  "private": false,
+  "main": "src/drag-sort/index.vue",
+  "scripts": {},
+  "license": "ISC"
+}
