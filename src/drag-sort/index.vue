@@ -39,6 +39,7 @@ export default {
       height: 55, // 高度
       currentList: [],
       active: -1, // 当前激活的item
+      index: 0, // 当前激活的item的原index
       topY: 0, // 距离顶部的距离
       deviationY: 0 // 偏移量
     }
@@ -79,7 +80,7 @@ export default {
       for (const key in this.list) {
         arr.push({
           ...this.list[key],
-          index: key,
+          index: Number(key),
           y: key * this.height,
           animation: true
         })
@@ -98,6 +99,7 @@ export default {
         for (const key in this.currentList) {
           if ((this.currentList[key].index * this.height < touchY) && ((this.currentList[key].index + 1) * this.height > touchY)) {
             this.active = key
+            this.index = this.currentList[key].index
             break
           }
         }
@@ -131,7 +133,7 @@ export default {
       }
     },
     touchend (e) {
-      if (this.active > -1) {
+      if ((this.index !== this.currentList[this.active].index) && (this.active > -1)) {
         this.$emit('change', {
           // 操作值
           data: (() => {

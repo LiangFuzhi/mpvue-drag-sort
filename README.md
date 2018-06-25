@@ -15,7 +15,7 @@ npm i mpvue-drag-sort
 </template>
 
 <script>
-import dragSort from 'dragSort'
+import dragSort from 'mpvue-drag-sort'
 export default {
   components: {
     dragSort
@@ -48,6 +48,8 @@ export default {
   methods: {
     onDragSortChange (e) {
       console.log(e)
+      // frontData 插到谁后面
+      // data 操作的数据
     }
   }
 }
